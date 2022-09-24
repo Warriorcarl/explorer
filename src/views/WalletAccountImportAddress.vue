@@ -9,7 +9,7 @@
         DISCLAIMER:
       </h4>
       <div class="alert-body">
-        <span>Ping.pub is maintained by the community, Everyone could add a chain to ping.pub. Some of those blockchains are not fully tested, Use at your own risk.</span>
+        <span>Node Warrior is maintained by the community, Everyone could add a chain to Node Warrior. Some of those blockchains are not fully tested, Use at your own risk.</span>
       </div>
     </b-alert>
     <form-wizard
@@ -94,7 +94,7 @@
                     v-model="address"
                     class="mt-1"
                     name="address"
-                    placeholder="cosmos1ev0vtddkl7jlwfawlk06yzncapw2x9quyxx75u"
+                    placeholder="cosmos10h3w8csz9g9d6p2y4w5f99fe8xdxsftjeseuyq"
                   />
                   <small class="text-danger">{{ debug }}{{ errors[0] }}</small>
                 </validation-provider>
@@ -504,7 +504,7 @@ export default {
           coinGeckoId: chain.assets[0].coingecko_id || 'unknown',
         },
         gasPriceStep: {
-          low: 0.01,
+          low: 0,
           average: 0.025,
           high: 0.03,
         },

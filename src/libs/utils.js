@@ -195,13 +195,12 @@ export function consensusPubkeyToHexAddress(consensusPubkey) {
   let raw = null
   if (typeof consensusPubkey === 'object') {
     if (consensusPubkey['@type'] === '/cosmos.crypto.ed25519.PubKey') {
-      // raw = toBase64(fromHex(toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40)))
-      raw = toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40).toUpperCase()
+      raw = toBase64(fromHex(toHex(sha256(fromBase64(consensusPubkey.key))).slice(0, 40)))
       return raw
     }
     // /cosmos.crypto.secp256k1.PubKey
     if (consensusPubkey['@type'] === '/cosmos.crypto.secp256k1.PubKey') {
-      raw = new RIPEMD160().update(Buffer.from(sha256(fromBase64(consensusPubkey.key)))).digest('hex')
+      raw = toBase64(fromHex(new RIPEMD160().update(Buffer.from(sha256(fromBase64(consensusPubkey.key)))).digest('hex')))
       return raw
     }
     if (consensusPubkey.type === 'tendermint/PubKeySecp256k1') {
@@ -234,7 +233,7 @@ function getHdPath(address) {
 }
 
 function isEvmosBasedChain(chainId) {
-  const re = /[_]{1}[\d]{4}[\\-]{1}[\d]+$/g
+  const re = /[_]{1}[\d]{4,5}[\\-]{1}[\d]+$/g
   return re.test(chainId)
 }
 

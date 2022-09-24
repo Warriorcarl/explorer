@@ -19,7 +19,7 @@ function processMenu() {
       title: 'blockchains',
       children: blockchains,
       tag: `${blockchains.length}`,
-      icon: 'https://ping.pub/logo.svg',
+      icon: '/logo.svg',
     })
   }
   chainMenus.push({ header: 'LINKS' })
@@ -31,29 +31,29 @@ function processMenu() {
     })
   } else {
     chainMenus.push({
-      title: 'Testnet Explorer',
-      href: 'http://testnet.ping.pub',
+      title: 'NodeWarrior',
+      href: 'https://explorer.nodewarrior.dev',
       icon: 'LifeBuoyIcon',
     })
   }
   chainMenus.push({
     title: 'Github',
-    href: 'https://github.com/ping-pub/explorer',
+    href: 'https://github.com/Warriorcarl',
     icon: 'GithubIcon',
   })
   chainMenus.push({
     title: 'Discord',
-    href: 'https://discord.gg/CmjYVSr6GW',
+    href: 'https://discord.gg/WuVV4VYcBr',
     icon: 'EyeIcon',
   })
   chainMenus.push({
     title: 'Twitter',
-    href: 'https://twitter.com/ping_pub',
+    href: 'https://twitter.com/warriorcarl',
     icon: 'TwitterIcon',
   })
   chainMenus.push({
     title: 'Telegram',
-    href: 'https://t.me/pingpub',
+    href: 'https://t.me/+-tFu9biVYCdiYTJl',
     icon: 'SendIcon',
   })
 

@@ -1,20 +1,18 @@
 {
-    "chain_name": "haqq",
+    "chain_name": "HAQQ",
     "coingecko": "",
     "api": ["https://haqq.t.api.nodewarrior.dev"],
-    "rpc": ["https://haqq.t.rpc.nodewarrior.dev"],
     "snapshot_provider": "",
     "sdk_version": "0.45.6",
-    "coin_type": "60",
-    "min_tx_fee": "3000000000000000",
+    "coin_type": "118",
+    "min_tx_fee": "200",
     "addr_prefix": "haqq",
-    "logo": "/logos/haqq.png",
-    "keplr_features": ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
+    "logo": "https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/haqq.png",
     "assets": [{
         "base": "aISLM",
         "symbol": "ISLM",
         "exponent": "18",
         "coingecko_id": "",
-        "logo": "/logos/islm.png"
+        "logo": "https://raw.githubusercontent.com/kj89/testnet_manuals/main/pingpub/logos/haqq.png"
     }]
 }

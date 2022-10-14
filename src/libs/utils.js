@@ -234,7 +234,7 @@ function getHdPath(address) {
 }
 
 function isEvmosBasedChain(chainId) {
-  const re = /[_]{1}[\d]{4,5}[\\-]{1}[\d]+$/g
+  const re = /[_]{1}[\d]{4}[\\-]{1}[\d]+$/g
   return re.test(chainId)
 }
 
@@ -491,19 +491,21 @@ export function getCachedValidators(chainName) {
 }
 
 export function isHexAddress(v) {
-  const re = /^[A-Z\d]{40}$/
-  return re.test(v)
+  // const re = /^[A-Z\d]{40}$/
+  // return re.test(v)
+  return v.length === 28
 }
 
-export function getStakingValidatorByHex(chainName, hex) {
+export function getStakingValidatorByHex(chainName, textBase64) {
   const locals = localStorage.getItem(`validators-${chainName}`)
   if (locals) {
-    const val = JSON.parse(locals).find(x => consensusPubkeyToHexAddress(x.consensus_pubkey) === hex)
+    const val = JSON.parse(locals)
+      .find(x => toBase64(fromHex(consensusPubkeyToHexAddress(x.consensus_pubkey))) === textBase64)
     if (val) {
       return val.description.moniker
     }
   }
-  return abbr(hex)
+  return abbr(textBase64)
 }
 
 export function getStakingValidatorByAccount(chainName, addr) {
